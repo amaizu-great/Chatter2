@@ -4,7 +4,7 @@
 
 /* /auth */
 .authsidescreen {
-  background: url("../public/authsideimage.jpeg") no-repeat center center;
+  background: url("../public/images/authsideimage.jpeg") no-repeat center center;
   background-size: cover;
 }
 .left {
@@ -31,5 +31,25 @@
   100% {
     transform: translateX(100%);
     opacity: 1;
+  }
+}
+@layer utilities {
+  /* Webkit (Chrome, Safari, Opera) */
+  .scrollbar::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: #8888888e;
+  }
+
+  /* Firefox */
+  .scrollbar {
+    scrollbar-width: none;
+    scrollbar-color: #8888888e transparent;
   }
 }

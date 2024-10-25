@@ -1,3 +1,4 @@
+import GoogleButton from "./GoogleButton";
 import signUpUser from "../functions/signupUser";
 import authValues from "@/zustand/auth/authValues";
 
@@ -42,7 +43,7 @@ const SignUp = () => {
         Register as a Writer/Reader
       </h1>
 
-      <form onSubmit={signUpUser} className="flex flex-col w-full gap-3" >
+      <form onSubmit={(e) => signUpUser(e)} className="flex flex-col w-full gap-3" >
 
         <section className="flex w-full gap-3 justify-between max-md:flex-col">
           <InputElement type="text" name="firstname" value={firstName} text="First Name" setFunction={setFirstName} placeholder="John" />
@@ -66,13 +67,13 @@ const SignUp = () => {
 
         <InputElement type="password" name="confirmpassword" value={confirmPassword} text="Confirm Password" setFunction={setConfirmPassword} placeholder="Confirm Password" password={password}/>
 
-        <button disabled={isLoading} className={`${isLoading ? "bg-[#4131af]" : "bg-[#543EE0]" } flex gap-1 items-end justify-center rounded-[8px] border-none p-[10px] text-[14px] text-white w-full`}>
+        <button disabled={isLoading} className={`${isLoading ? "bg-[#4131af]" : "bg-[#543EE0]" } flex gap-1 items-end justify-center rounded-[8px] border-none p-[10px] text-[14px] text-white w-full max-sm:text-[12px]`}>
           Create Account
           {isLoading && <span className="loading loading-dots loading-xs"></span>}
         </button>
       </form>
-
-      {/* <AuthWithGoogle /> */}
+      
+      <GoogleButton />
     </main>
   );
 };

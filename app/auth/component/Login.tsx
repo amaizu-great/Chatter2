@@ -1,8 +1,8 @@
 "use client";
 import Link from "next/link";
+import GoogleButton from "./GoogleButton";
 import loginUser from "../functions/loginUser";
 import authValues from "@/zustand/auth/authValues";
-// import AuthWithGoogle from "../google/authWithGoogle";
 
 type InputElementProps = {
   text: string;
@@ -66,7 +66,7 @@ const Login = () => {
         </button>
       </form>
 
-      {/* <AuthWithGoogle /> */}
+      <GoogleButton />
     </main>
   );
 };

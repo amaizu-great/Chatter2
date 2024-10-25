@@ -1,11 +1,9 @@
-"use client"
-import currentAuthPath from '@/zustand/auth/authValues'
+"use client";
+import currentAuthPath from "@/zustand/auth/authValues";
 
 const Auth = () => {
-    const {AuthPath} = currentAuthPath()
-  return (
-    <>{AuthPath}</>
-  )
-}
+  const { AuthPath } = currentAuthPath();
+  return <>{AuthPath}</>;
+};
 
-export default Auth
+export default Auth;

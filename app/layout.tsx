@@ -1,4 +1,5 @@
 import "./globals.css";
+import Theme from "@/Theme/theme";
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 
@@ -16,8 +17,9 @@ export const metadata: Metadata = {
 //prettier-ignore
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode; }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="">
       <body className={poppins.className} >
+        <Theme />
         {children}
       </body>
     </html>
